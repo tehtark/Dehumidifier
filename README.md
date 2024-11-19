@@ -19,9 +19,11 @@ Dehumidifier helps you manage Steam internet access on your Windows PC. Here's h
 - Open Windows Defender Firewall and navigate to the "Outbound Rules" section. Locate the rules named "Dehumidifier" and delete them.
 
 ### Troubleshooting:
-
+- Windows Defender might flag Dehumidifier as a potential threat due to its manipulation of firewall rules. This is a false positive. If this happens, you can safely allow Dehumidifier through Windows Defender.
 - If you're unable to play a shared game even after launching Dehumidifier, try restarting your Steam client. This usually resolves any conflicts.
 - Report any issues or feature requests on the GitHub repository.
+
+
 ### [Change Log](https://github.com/tehtark/Dehumidifier/blob/master/CHANGELOG.md)
 
 

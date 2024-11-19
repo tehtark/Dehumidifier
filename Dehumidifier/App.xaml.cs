@@ -15,18 +15,21 @@ public partial class App : System.Windows.Application
     private IFirewallRule? _rule;
     private string _ruleName = "Dehumidifier";
 
-    public App()
+    private async void Application_Startup(object sender, StartupEventArgs e)
     {
+        var processes = Process.GetProcessesByName("Dehumidifier").ToList();
+        if (processes.Count > 1)
+        {
+            Process.GetCurrentProcess().Kill();
+        }
+
         NotifyIcon notifyIcon = new NotifyIcon();
         notifyIcon.Icon = new Icon("icon.ico");
         notifyIcon.Text = $"{_ruleName} v{Assembly.GetExecutingAssembly().GetName().Version}";
         notifyIcon.Visible = true;
         notifyIcon.ContextMenuStrip = new ContextMenuStrip();
         notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (sender, e) => { Shutdown(); });
-    }
 
-    private async void Application_Startup(object sender, StartupEventArgs e)
-    {
         string? path = await GetExecutablePathAsync();
         if (path is null) { Shutdown(); return; }
 

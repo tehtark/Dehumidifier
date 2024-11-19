@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dehumidifier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ShowInTaskbar="true" Visibility="Hidden">
+        Title="MainWindow" Height="450" Width="800" ShowInTaskbar="false" Visibility="Hidden">
     <Grid>
     </Grid>
 </Window>
